@@ -14,4 +14,4 @@
  #Exposing port 5000 from the container
  EXPOSE 5000
  #Starting the Python application
- CMD ["gunicorn", "--bind", "0.0.0.0:5000", "server:app"]
+ CMD ["flask", "run", "--host=0.0.0.0", "--port=5000" ,"server:app"]
