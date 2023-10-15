@@ -6,8 +6,8 @@ from flask import Flask, request
 app = Flask(__name__)
 
 # Load the .pkl model
-model = joblib.load('models\knn_classifier_model.pkl')
-encoder = joblib.load('models\encoder.joblib')
+model = joblib.load('knn_classifier_model.pkl')
+encoder = joblib.load('encoder.joblib')
 y_train = ['Q123', 'C100', 'T67894', 'T67894', 'Q123', 'Q123', 'C100', 'T67895', 'T67897', 'N123456', 'N123456', 'Q123',
            'T67897', 'T67899', 'C100', 'T67897', 'T67899', 'N123789', 'T67895', 'Q123', 'T67899', 'C100', 'T67890',
            'C100', 'T67899', 'T67895', 'N123456', 'N123789', 'N123456', 'T67895', 'Q123', 'T67894', 'T67899', 'T67895',
