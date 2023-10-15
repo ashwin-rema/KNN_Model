@@ -3,15 +3,15 @@
  
  #Set our working directory as app
  WORKDIR /app 
- COPY requirements.txt requirements.txt
+ COPY requirements.txt /app
  #Installing Python packages through requirements.txt file
  RUN pip install -r requirements.txt
  
  # Copy the model's directory and server.py files
- ADD ./models ./models
- ADD server.py server.py
- 
+ COPY . .
  #Exposing port 5000 from the container
  EXPOSE 5000
+ 
+ ENV FLASK_APP=server.py
  #Starting the Python application
- CMD ["flask", "run", "--host=0.0.0.0", "--port=5000" ,"server:app"]
+ CMD ["flask", "run", "--host=0.0.0.0", "--port=5000" ]
