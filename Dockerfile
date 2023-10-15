@@ -3,6 +3,7 @@
  
  #Set our working directory as app
  WORKDIR /app 
+ COPY requirements.txt requirements.txt
  #Installing Python packages through requirements.txt file
  RUN pip install -r requirements.txt
  
